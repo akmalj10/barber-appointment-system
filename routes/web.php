@@ -10,6 +10,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::middleware(['auth'])->group(function () {
+    Route::get('/appointments', [BookingController::class, 'index'])->name('appointments.index');
+    
+    Route::patch('/appointments/{id}/cancel', [BookingController::class, 'cancel'])->name('appointments.cancel');
+});
+
 Route::get('/dashboard', function () {
     return view('welcome');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -27,6 +33,10 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::resource('services', ServiceController::class);
+    Route::get('/booking', [BookingController::class, 'index'])->name('booking');
+    Route::post('/booking', [BookingController::class, 'store'])->name('booking.store');
+    Route::get('/appointments', [BookingController::class, 'listAppointments'])->name('appointments.index');
+    Route::patch('/appointments/{id}/cancel', [BookingController::class, 'cancel'])->name('appointments.cancel');
 });
 
 require __DIR__.'/auth.php';

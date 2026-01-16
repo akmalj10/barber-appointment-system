@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Barber Booking System</title>
+        <title>Homepage | Barber Booking System</title>
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
         @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -20,7 +20,7 @@
 
             @auth
                 <a href="{{ route('booking') }}" class="text-lg font-medium text-gray-700 hover:text-indigo-600 transition">Booking</a>
-                <a href="{{ url('/dashboard') }}" class="text-lg font-medium text-gray-700 hover:text-indigo-600 transition">Appointments</a>
+                <a href="{{ route('appointments.index') }}" class="text-lg font-medium text-gray-700 hover:text-indigo-600 transition">Appointments</a>
                 
                 <a href="{{ route('profile.edit') }}" class="flex items-center space-x-2 group pl-4">
                     <span class="font-bold text-gray-700 group-hover:text-indigo-600 transition">
@@ -77,17 +77,22 @@
                     </div>
 
                     <div class="flex flex-col items-center p-6 bg-white dark:bg-gray-800 rounded-3xl shadow-lg transition-transform hover:-translate-y-2">
-                        <div class="mb-6 overflow-hidden rounded-2xl border-4 border-gray-100 dark:border-gray-700">
-                            <img src="{{ asset('images/HairWash.jpg') }}" alt="Hair Wash" class="w-64 h-64 object-cover">
-                        </div>
-                        <h3 class="text-2xl font-bold mb-2">Luxury Hair Wash</h3>
-                        <p class="text-gray-500 text-center mb-4">Refreshing scalp massage and premium care</p>
-                        <span class="text-2xl font-black text-indigo-600">RM 10.00</span>
+                    <div class="mb-6 overflow-hidden rounded-2xl border-4 border-gray-100 dark:border-gray-700">
+                        <img src="{{ asset('images/HairWash.jpg') }}" alt="Hair Wash" class="w-64 h-64 object-cover">
                     </div>
-
+                    <h3 class="text-2xl font-bold mb-2">Luxury Hair Wash</h3>
+                    <p class="text-gray-500 text-center mb-4">Refreshing scalp massage and premium care</p>
+                    <span class="text-2xl font-black text-indigo-600">RM 10.00</span>
                 </div>
+            
+            </div> <div class="mt-16 flex justify-center mt-2">
+                <a href="{{ route('booking') }}" 
+                    class="bg-indigo-600 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:bg-indigo-700 hover:-translate-y-1 transition-all duration-300">
+                    Book Appointment Now
+                </a>
             </div>
-        </section>
+        </div>
+    </section>
 
         <footer class="py-10 text-center text-gray-400 border-t border-gray-100 dark:border-gray-800">
             <p>&copy; {{ date('Y') }} Barber Appointment System</p>

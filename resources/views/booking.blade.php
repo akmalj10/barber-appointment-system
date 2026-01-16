@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Barber Booking System</title>
+        <title>Booking Page | Barber Booking System</title>
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
         @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -26,7 +26,7 @@
             <a href="{{ url('/') }}" class="text-lg font-medium text-gray-700 hover:text-indigo-600 transition">Home</a>
             @auth
                 <a href="{{ route('booking') }}" class="text-lg font-medium text-gray-700 hover:text-indigo-600 transition">Booking</a>
-                <a href="{{ url('/dashboard') }}" class="text-lg font-medium text-gray-700 hover:text-indigo-600 transition">Appointments</a>
+                <a href="{{ route('appointments.index') }}" class="text-lg font-medium text-gray-700 hover:text-indigo-600 transition">Appointments</a>
                 <a href="{{ route('profile.edit') }}" class="flex items-center space-x-2 group pl-4">
                     <span class="font-bold text-gray-700 group-hover:text-indigo-600 transition">{{ Auth::user()->name }}</span>
                     <div class="p-1 bg-gray-900 rounded-full">
@@ -59,7 +59,7 @@
         </div>
         <button onclick="document.getElementById('success-alert').remove()" class="text-green-900 font-bold">&times;</button>
     </div>
-    @endif
+        @endif
             <div class="bg-[#F9E4B7] dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-700 rounded-[40px] p-8 md:p-12 w-full max-w-6xl shadow-xl">
                 <form action="{{ route('booking.store') }}" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-10">
                     @csrf
@@ -133,5 +133,8 @@
             </div>
         </div>
     </main>
+            <footer class="py-10 text-center text-gray-400 border-t border-gray-100 dark:border-gray-800">
+                <p>&copy; {{ date('Y') }} Barber Appointment System</p>
+            </footer>
     </body>
 </html>
