@@ -26,7 +26,8 @@ class BookingController extends Controller
             'name' => 'required|string|max:255',
             'phone' => 'required|string',
             'email' => 'required|email',
-            'service' => 'required',
+            'service' => 'required|array|min:1',
+            'service.*' => 'string',
             'date' => 'required|date',
             'hour' => 'required',
             'minute' => 'required',
@@ -36,13 +37,16 @@ class BookingController extends Controller
         // 2. Format the time string from separate dropdowns
         $time = $validated['hour'] . ':' . $validated['minute'] . ' ' . $validated['ampm'];
 
+        $service = implode(', ', $validated['service']);
+
+
         // 3. Save to database
         Booking::create([
             'user_id' => Auth::id(),
             'name' => $validated['name'],
             'phone' => $validated['phone'],
             'email' => $validated['email'],
-            'service' => $validated['service'],
+            'service' => $service,
             'date' => $validated['date'],
             'time' => $time,
             'status' => 'Pending',

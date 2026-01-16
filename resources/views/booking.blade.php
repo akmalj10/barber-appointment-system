@@ -83,20 +83,41 @@
                     <div class="bg-[#EFFFF0] dark:bg-gray-700 border border-gray-200 rounded-lg p-8 shadow-sm flex flex-col">
                         <h2 style="font-size: 23px;" class="bg-blue-600 px-4 py-2 w-64 rounded-md text-2xl font-bold mx-auto text-center mb-10 uppercase text-gray-800 dark:text-white">Booking Details</h2>
                         <div class="space-y-4 flex-grow">
-                            <div class="py-4">
-                                <p class="font-bold mb-4">Service:</p>
-                                <div class="flex flex-wrap gap-6">
-                                    <label class="flex items-center space-x-2 cursor-pointer">
-                                        <input type="radio" name="service" class="w-5 h-5 text-indigo-600"> <span style="margin-left: 8px;">Haircut</span>
-                                    </label>
-                                    <label class="flex items-center space-x-2 cursor-pointer">
-                                        <input type="radio" name="service" class="w-5 h-5 text-indigo-600"> <span style="margin-left: 8px;">Beard Trim</span>
-                                    </label>
-                                    <label class="flex items-center space-x-2 cursor-pointer">
-                                        <input type="radio" name="service" class="w-5 h-5 text-indigo-600"> <span style="margin-left: 8px;">Hair Wash</span>
-                                    </label>
-                                </div>
-                            </div>
+                        <div class="py-4">
+                        <p class="font-bold mb-4">Service:</p>
+
+                        <div class="flex flex-wrap gap-6">
+                            <label class="flex items-center cursor-pointer">
+                                <input
+                                    type="checkbox"
+                                    name="service[]"
+                                    value="Haircut"
+                                    class="w-5 h-5 text-indigo-600"
+                                >
+                                <span class="ml-2">Haircut</span>
+                            </label>
+
+                            <label class="flex items-center cursor-pointer">
+                                <input
+                                    type="checkbox"
+                                    name="service[]"
+                                    value="Beard Trim"
+                                    class="w-5 h-5 text-indigo-600"
+                                >
+                                <span class="ml-2">Beard Trim</span>
+                            </label>
+
+                            <label class="flex items-center cursor-pointer">
+                                <input
+                                    type="checkbox"
+                                    name="service[]"
+                                    value="Hair Wash"
+                                    class="w-5 h-5 text-indigo-600"
+                                >
+                                <span class="ml-2">Hair Wash</span>
+                            </label>
+                        </div>
+                    </div>
                             <div class="py-4">
                                 <label class="block font-bold mb-2">Date:</label>
                                 <input type="date" name="date" class="w-full rounded-xl border-2 border-amber-400 py-3 px-4 bg-white text-black">
