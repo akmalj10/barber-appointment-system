@@ -20,7 +20,7 @@
 
             @auth
                 <a href="{{ route('booking') }}" class="text-lg font-medium text-gray-700 hover:text-indigo-600 transition">Booking</a>
-                <a href="{{ url('/dashboard') }}" class="text-lg font-medium text-gray-700 hover:text-indigo-600 transition">Appointments</a>
+                <a href="{{ route('my.appointments') }}" class="text-lg font-medium text-gray-700 hover:text-indigo-600 transition">Appointments</a>
                 
                 <a href="{{ route('profile.edit') }}" class="flex items-center space-x-2 group pl-4">
                     <span class="font-bold text-gray-700 group-hover:text-indigo-600 transition">
