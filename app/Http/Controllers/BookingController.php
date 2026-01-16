@@ -8,9 +8,37 @@ use Illuminate\Support\Facades\Auth;
 
 class BookingController extends Controller
 {
+<<<<<<< HEAD
     /**
      * Display the booking form.
      */
+=======
+    public function myAppointments()
+    {
+        // Fetch bookings for the authenticated user, ordered by date descending
+        $bookings = Booking::where('user_id', Auth::id())
+                            ->orderBy('date', 'desc')
+                            ->orderBy('time', 'desc')
+                            ->get();
+
+        // Return the view with bookings data
+        return view('my-appointments', compact('bookings'));
+    }
+
+    // Optional: Add a destroy method for canceling bookings
+    public function destroy(Booking $booking)
+    {
+        // Ensure the booking belongs to the user
+        if ($booking->user_id !== Auth::id()) {
+            abort(403, 'Unauthorized');
+        }
+
+        $booking->delete();
+
+        return redirect()->route('my.appointments')->with('success', 'Appointment canceled successfully.');
+    }
+
+>>>>>>> 96b4478df7e564d5d1d8175df1ee415827af2c9a
     public function index()
     {
         return view('booking');

@@ -26,7 +26,11 @@
             <a href="{{ url('/') }}" class="text-lg font-medium text-gray-700 hover:text-indigo-600 transition">Home</a>
             @auth
                 <a href="{{ route('booking') }}" class="text-lg font-medium text-gray-700 hover:text-indigo-600 transition">Booking</a>
+<<<<<<< HEAD
                 <a href="{{ route('appointments.index') }}" class="text-lg font-medium text-gray-700 hover:text-indigo-600 transition">Appointments</a>
+=======
+                <a href="{{ route('my.appointments') }}" class="text-lg font-medium text-gray-700 hover:text-indigo-600 transition">Appointments</a>
+>>>>>>> 96b4478df7e564d5d1d8175df1ee415827af2c9a
                 <a href="{{ route('profile.edit') }}" class="flex items-center space-x-2 group pl-4">
                     <span class="font-bold text-gray-700 group-hover:text-indigo-600 transition">{{ Auth::user()->name }}</span>
                     <div class="p-1 bg-gray-900 rounded-full">
