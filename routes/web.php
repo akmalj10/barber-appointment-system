@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\BookingController;
+use App\Http\Controllers\Controller;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Route;
@@ -15,6 +17,10 @@ Route::get('/dashboard', function () {
 Route::get('/booking', function () {
     return view('booking');
 })->middleware(['auth'])->name('booking');
+
+Route::get('/booking', [BookingController::class, 'index'])->name('booking');
+
+Route::post('/booking/store', [BookingController::class, 'store'])->name('booking.store');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

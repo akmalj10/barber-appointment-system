@@ -49,9 +49,19 @@
             <div class="bg-amber-500 px-12 py-4 rounded-xl shadow-md border-2 border-gray-800 mb-12">
                 <h1 class="bg-blue-600 px-4 py-2 rounded-md text-3xl font-extrabold text-black uppercase tracking-tight">Booking Form</h1>
             </div>
-
+        @if(session('success'))
+    <div id="success-alert" class="max-w-4xl mx-auto mb-6 p-4 bg-green-100 border-l-4 border-green-500 text-green-700 shadow-md rounded-r-lg flex justify-between items-center animate-bounce">
+        <div class="flex items-center">
+            <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="font-bold">{{ session('success') }}</span>
+        </div>
+        <button onclick="document.getElementById('success-alert').remove()" class="text-green-900 font-bold">&times;</button>
+    </div>
+    @endif
             <div class="bg-[#F9E4B7] dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-700 rounded-[40px] p-8 md:p-12 w-full max-w-6xl shadow-xl">
-                <form action="#" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <form action="{{ route('booking.store') }}" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-10">
                     @csrf
                     
                     <div class="bg-[#EFFFF0] dark:bg-gray-700 border border-gray-200 rounded-lg p-8 shadow-sm">
