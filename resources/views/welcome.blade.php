@@ -3,14 +3,14 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Barber Shop | Professional Grooming</title>
+        <title>Barber Booking System</title>
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="antialiased bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100">
         
-            <nav class="py-4 px-6 flex justify-between items-center bg-[#F2E8CF] shadow-sm border-b border-gray-200">
+    <nav class="py-4 px-6 flex justify-between items-center bg-[#F2E8CF] shadow-sm border-b border-gray-200">
         <div class="text-2xl font-bold tracking-tighter uppercase">
             <span class="text-gray-900 dark:text-white">Barber</span><span class="text-indigo-600">Booking</span>
         </div>
@@ -19,11 +19,11 @@
             <a href="{{ url('/') }}" class="text-lg font-medium text-gray-700 hover:text-indigo-600 transition">Home</a>
 
             @auth
-                <a href="{{ route('services.index') }}" class="text-lg font-medium text-gray-700 hover:text-indigo-600 transition">Booking</a>
+                <a href="{{ route('booking') }}" class="text-lg font-medium text-gray-700 hover:text-indigo-600 transition">Booking</a>
                 <a href="{{ url('/dashboard') }}" class="text-lg font-medium text-gray-700 hover:text-indigo-600 transition">Appointments</a>
                 
                 <a href="{{ route('profile.edit') }}" class="flex items-center space-x-2 group pl-4">
-                    <span class="font-bold text-gray-800 group-hover:text-indigo-600 transition">
+                    <span class="font-bold text-gray-700 group-hover:text-indigo-600 transition">
                         {{ Auth::user()->name }}
                     </span>
                     <div class="p-1 bg-gray-900 rounded-full">
